@@ -15,28 +15,33 @@ var currentCal = 0;
 //iterate through list adding together calories once it hits a blank space.
 for (int i = 0; i < strList.Count; i++)
 {
-    try
+    if (int.TryParse(strList[i], out int calories))
     {
-        currentCal = currentCal + Convert.ToInt32(strList[i]);
+        currentCal = currentCal + calories;
     }
-    catch
+
+    if (!int.TryParse(strList[i], out _) || i == strList.Count - 1)
     {
         if (currentCal >= bigCal)
         {
+            bigCalThree = bigCalTwo;
+            bigCalTwo = bigCal;
             bigCal = currentCal;
-        }else if (currentCal >= bigCalTwo)
+        }
+        else if (currentCal >= bigCalTwo)
         {
+            bigCalThree = bigCalTwo;
             bigCalTwo = currentCal;
-        }else if (currentCal >= bigCalThree)
+        }
+        else if (currentCal >= bigCalThree)
         {
             bigCalThree = currentCal;
         }
-        currentCal = 0;   
+        currentCal = 0;
     }
 }
-Console.WriteLine(bigCal);
-Console.WriteLine(bigCalTwo);
-Console.WriteLine(bigCalThree);
+
 var topThreeComb = bigCal + bigCalTwo + bigCalThree;
-Console.WriteLine(topThreeComb);
+Console.WriteLine($"Part one answer: {bigCal}");
+Console.WriteLine($"Part two answer: {topThreeComb}");
 Console.ReadKey();
