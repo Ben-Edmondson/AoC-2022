@@ -6,12 +6,7 @@
         {
             var file = File.ReadAllLines("C:\\dev\\PayCalc\\AoC\\AoC\\Day2\\input.txt");
             var strList = new List<string>(file);
-            //1 point for rock play
-            //2 points for paper play
-            //3 points for scissors play
-            //3 more for draw
-            //6 for a win
-            //0 for a loss
+            //part 1
             var score = 0;
             foreach(var str in strList)
             {
@@ -58,6 +53,60 @@
                     else if (yourTurn == "Z")
                     {
                         score = score + 6;
+                    }
+                }
+            }
+            Console.WriteLine(score);
+            //part 2
+            score = 0;
+            foreach(var turns in strList)
+            {
+                //X lose, Y Draw, Z Win
+                var whatsPlayed = turns.Substring(0, 1);
+                var winYesNo = turns.Substring(2, 1);
+                if (whatsPlayed == "A")
+                {
+                    if (winYesNo == "X")
+                    {
+                        score = score + 3;
+                    }
+                    else if (winYesNo == "Y")
+                    {
+                        score = score + 4;
+                    }
+                    else if (winYesNo == "Z")
+                    {
+                        score = score + 8;
+                    }
+                }
+                else if (whatsPlayed == "B")
+                {
+                    if (winYesNo == "X")
+                    {
+                        score = score + 1;
+                    }
+                    else if (winYesNo == "Y")
+                    {
+                        score = score + 5;
+                    }
+                    else if (winYesNo == "Z")
+                    {
+                        score = score + 9;
+                    }
+                }
+                else if (whatsPlayed == "C")
+                {
+                    if (winYesNo == "X")
+                    {
+                        score = score + 2;
+                    }
+                    else if (winYesNo == "Y")
+                    {
+                        score = score + 6;
+                    }
+                    else if (winYesNo == "Z")
+                    {
+                        score = score + 7;
                     }
                 }
             }
