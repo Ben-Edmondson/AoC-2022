@@ -6,9 +6,13 @@ namespace AoCTests
     {
         private LowercaseCalculation lowercaseCalculation = new LowercaseCalculation();
 
-        List<char> Inputs = new List<char>()
+        List<char> inputsNoDuplicates = new List<char>()
         {
             'p','L','P','v','t','s'
+        };
+        List<char> inputsWithDupes = new List<char>()
+        {
+            'p','L','P','v','t','s','s'
         };
         [SetUp]
         public void SetUp()
@@ -17,11 +21,18 @@ namespace AoCTests
         }
 
         [Test]
-        public void LowerCaseCalcGetsCorrectResult()
+        public void LowerCaseCalcGetsCorrectResultWithNoDupes()
         {
-            int result = lowercaseCalculation.GetLowercasePriorityTotal(Inputs);
+            int result = lowercaseCalculation.GetLowercasePriorityTotal(inputsNoDuplicates);
 
             Assert.That(result, Is.EqualTo(77));
+        }
+        [Test]
+        public void LowerCaseCalcGetsCorrectResultWithDupes()
+        {
+            int result = lowercaseCalculation.GetLowercasePriorityTotal(inputsWithDupes);
+
+            Assert.That(result, Is.EqualTo(96));
         }
     }
 }

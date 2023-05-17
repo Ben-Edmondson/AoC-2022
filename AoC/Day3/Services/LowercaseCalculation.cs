@@ -17,10 +17,12 @@ namespace AoC
 
             foreach (char letter in lowercaseAlphabet)
             {
-
-                if (charsForSolution.Contains(letter))
+                foreach(char input in charsForSolution)
                 {
-                    sumOfPriority = sumOfPriority + numberAssigned;
+                    if(letter == input)
+                    {
+                        sumOfPriority = sumOfPriority + numberAssigned;
+                    }
                 }
                 numberAssigned++;
             }

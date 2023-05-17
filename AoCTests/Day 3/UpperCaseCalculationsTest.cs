@@ -2,13 +2,17 @@
 using AoC;
 namespace AoCTests
 {
-    public class UppereCalculationsTest
+    public class UpperCalculationsTest
     {
         private UppercaseCalculations uppercaseCalculation = new UppercaseCalculations();
 
-        List<char> Inputs = new List<char>()
+        List<char> inputsWithoutDupes = new List<char>()
         {
             'p','L','P','v','t','s'
+        };
+        List<char> inputsWithDupes = new List<char>()
+        {
+            'p','L','P','v','t','s','P'
         };
         [SetUp]
         public void SetUp()
@@ -19,9 +23,16 @@ namespace AoCTests
         [Test]
         public void UpperCaseCalcGetsCorrectResult()
         {
-            int result = uppercaseCalculation.GetUppercasePriorityTotal(Inputs);
+            int result = uppercaseCalculation.GetUppercasePriorityTotal(inputsWithoutDupes);
 
             Assert.That(result, Is.EqualTo(80));
+        }
+        [Test]
+        public void UpperCaseCalcGetsCorrectResultWithDupes()
+        {
+            int result = uppercaseCalculation.GetUppercasePriorityTotal(inputsWithDupes);
+
+            Assert.That(result, Is.EqualTo(122));
         }
     }
 }
