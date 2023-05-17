@@ -11,9 +11,8 @@ namespace AoC
         List<char> charsForSolution = new List<char>();
 
 
-        public List<char> stringSplit()
+        public List<char> stringSplit(string[] inputs)
         {
-            var inputs = File.ReadAllLines("C:\\dev\\PayCalc\\AoC\\AoC\\Day3\\Day3.txt");
 
             foreach (string input in inputs)
             {

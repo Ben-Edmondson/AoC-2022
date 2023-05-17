@@ -21,9 +21,11 @@
         LowercaseCalculation lowerCalculations = new LowercaseCalculation();
         public void day3()
         {
+            var inputs = File.ReadAllLines("C:\\dev\\PayCalc\\AoC\\AoC\\Day3\\Day3.txt");
+
             int result =
-                upperCalculations.GetUppercasePriorityTotal(StringSplit.stringSplit())
-                + lowerCalculations.GetLowercasePriorityTotal(StringSplit.stringSplit());
+                upperCalculations.GetUppercasePriorityTotal(StringSplit.stringSplit(inputs))
+                + lowerCalculations.GetLowercasePriorityTotal(StringSplit.stringSplit(inputs));
 
             Console.WriteLine(result);
             Console.ReadLine();
