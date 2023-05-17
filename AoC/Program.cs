@@ -4,8 +4,8 @@
     {
         static void Main(string[] args)
         {
-            Day2 day = new Day2();
-            day.day2();
+            Day3 day = new Day3();
+            day.day3();
         }
     }
 }
