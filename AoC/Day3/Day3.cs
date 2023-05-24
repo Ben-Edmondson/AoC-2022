@@ -26,7 +26,7 @@
             int upperCaseNumbers = lowerCalculations.GetLowercasePriorityTotal(StringSplit.stringSplit(inputs));
             int result = lowerCaseNumbers + upperCaseNumbers;
 
-            Console.WriteLine(result + 1);
+            Console.WriteLine(result);
             Console.ReadLine();
         }
 
