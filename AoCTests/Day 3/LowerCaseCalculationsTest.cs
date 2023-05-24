@@ -14,6 +14,11 @@ namespace AoCTests
         {
             'p','L','P','v','t','s','s'
         };
+
+        List<char> alphabetInput = new List<char>()
+        {
+            'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'
+        };
         [SetUp]
         public void SetUp()
         {
@@ -33,6 +38,13 @@ namespace AoCTests
             int result = lowercaseCalculation.GetLowercasePriorityTotal(inputsWithDupes);
 
             Assert.That(result, Is.EqualTo(96));
+        }
+        [Test]
+        public void LowercaseAlphabetAllCorrect()
+        {
+            int result = lowercaseCalculation.GetLowercasePriorityTotal(alphabetInput);
+
+            Assert.That(result, Is.EqualTo(351));
         }
     }
 }

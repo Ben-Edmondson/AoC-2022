@@ -14,6 +14,11 @@ namespace AoCTests
         {
             'p','L','P','v','t','s','P'
         };
+
+        List<char> alphabetInput = new List<char>()
+        {
+            'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'
+        };
         [SetUp]
         public void SetUp()
         {
@@ -33,6 +38,13 @@ namespace AoCTests
             int result = uppercaseCalculation.GetUppercasePriorityTotal(inputsWithDupes);
 
             Assert.That(result, Is.EqualTo(122));
+        }
+        [Test]
+        public void UppercaseAlphabetAllCorrect()
+        {
+            int result = uppercaseCalculation.GetUppercasePriorityTotal(alphabetInput);
+
+            Assert.That(result, Is.EqualTo(1027));
         }
     }
 }

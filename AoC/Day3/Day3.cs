@@ -22,12 +22,11 @@
         public void day3()
         {
             var inputs = File.ReadAllLines("C:\\dev\\PayCalc\\AoC\\AoC\\Day3\\Day3.txt");
+            int lowerCaseNumbers = upperCalculations.GetUppercasePriorityTotal(StringSplit.stringSplit(inputs));
+            int upperCaseNumbers = lowerCalculations.GetLowercasePriorityTotal(StringSplit.stringSplit(inputs));
+            int result = lowerCaseNumbers + upperCaseNumbers;
 
-            int result =
-                upperCalculations.GetUppercasePriorityTotal(StringSplit.stringSplit(inputs))
-                + lowerCalculations.GetLowercasePriorityTotal(StringSplit.stringSplit(inputs));
-
-            Console.WriteLine(result);
+            Console.WriteLine(result + 1);
             Console.ReadLine();
         }
 
