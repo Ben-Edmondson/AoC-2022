@@ -5,7 +5,7 @@
         static void Main(string[] args)
         {
             Day3 day = new Day3();
-            day.day3();
+            day.Day3Solution();
         }
     }
 }

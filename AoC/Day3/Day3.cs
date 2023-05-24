@@ -16,14 +16,15 @@
         //loop through each character of the first half, compare vs each letter of the second half till a match is found.
         // when found do priority calculation
 
-        StringSplit StringSplit = new StringSplit();
+        CompartmentSplitter compartmentSplitter = new CompartmentSplitter();
         UppercaseCalculations upperCalculations = new UppercaseCalculations();
         LowercaseCalculation lowerCalculations = new LowercaseCalculation();
-        public void day3()
+        public void Day3Solution()
         {
             var inputs = File.ReadAllLines("C:\\dev\\PayCalc\\AoC\\AoC\\Day3\\Day3.txt");
-            int lowerCaseNumbers = upperCalculations.GetUppercasePriorityTotal(StringSplit.stringSplit(inputs));
-            int upperCaseNumbers = lowerCalculations.GetLowercasePriorityTotal(StringSplit.stringSplit(inputs));
+            var compartments = compartmentSplitter.StringSplit(inputs);
+            int lowerCaseNumbers = upperCalculations.GetUppercasePriorityTotal(compartments);
+            int upperCaseNumbers = lowerCalculations.GetLowercasePriorityTotal(compartments);
             int result = lowerCaseNumbers + upperCaseNumbers;
 
             Console.WriteLine(result);

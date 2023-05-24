@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace AoC
 {
-    public class StringSplit
+    public class CompartmentSplitter
     {
-        List<char> charsForSolution = new List<char>();
 
 
-        public List<char> stringSplit(string[] inputs)
+        public List<char> StringSplit(string[] inputs)
         {
+            var charsForSolution = new List<char>();
 
             foreach (string input in inputs)
             {

@@ -7,7 +7,7 @@ namespace AoCTests
         [Test]
         public void DoesStringSplitCorrectlyGetRightCharacters()
         {
-            StringSplit stringSplit = new StringSplit();
+            CompartmentSplitter stringSplit = new CompartmentSplitter();
             string[] inputs = {
             "vJrwpWtwJgWrhcsFMMfFFhFp",
             "jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL",
