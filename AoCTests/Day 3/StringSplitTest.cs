@@ -15,7 +15,7 @@ namespace AoCTests
             "wMqvLMZHhHMvwLHjbvcjnnSBnvTQFn",
             "ttgJtRGJQctTZtZT",
             "CrZsJsPPZsGzwwsLwLmpwMDw"};
-            List<char> charsToTest = stringSplit.stringSplit(inputs);
+            List<char> charsToTest = stringSplit.StringSplit(inputs);
 
                 if (charsToTest.Contains('p') &&
                     charsToTest.Contains('L') &&

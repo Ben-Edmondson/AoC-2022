@@ -2,19 +2,6 @@
 {
     public class Day3
     {
-        //Rucksacks with supplies
-        //2 large compartments
-        //all items of a given type go into one of the compartments
-        //this rule has been failed for 1 item type per rucksack
-        //Item yupes are identified by a lower or uppercase letter.
-        //a and A are 2 different types of items for example
-        // a-z have prio 1-26
-        //A-Z has prio 27-52
-
-        //split string in half
-
-        //loop through each character of the first half, compare vs each letter of the second half till a match is found.
-        // when found do priority calculation
 
         CompartmentSplitter compartmentSplitter = new CompartmentSplitter();
         UppercaseCalculations upperCalculations = new UppercaseCalculations();
@@ -29,6 +16,19 @@
 
             Console.WriteLine(result);
             Console.ReadLine();
+        }
+
+        public void Day3Part2Solution()
+        {
+            //elves grouped in 3s
+            //badge is the only type carried by all 3
+            //this means if badge == B then B will be present in all 3 elves
+            //look for the only common item type in each backpack
+            //split groups after every 3rd line
+            //Find the common letter in each group
+            //add it to list of char
+            //do the priority calculation
+
         }
 
 
