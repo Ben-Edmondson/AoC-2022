@@ -6,6 +6,8 @@
         CompartmentSplitter compartmentSplitter = new CompartmentSplitter();
         UppercaseCalculations upperCalculations = new UppercaseCalculations();
         LowercaseCalculation lowerCalculations = new LowercaseCalculation();
+        FindCommonChar findCommonChar= new FindCommonChar();
+        ElfSplitter elfSplitter = new ElfSplitter();
         public void Day3Solution()
         {
             var inputs = File.ReadAllLines("C:\\dev\\PayCalc\\AoC\\AoC\\Day3\\Day3.txt");
@@ -20,19 +22,24 @@
 
         public void Day3Part2Solution()
         {
-            //elves grouped in 3s
-            //badge is the only type carried by all 3
-            //this means if badge == B then B will be present in all 3 elves
-            //look for the only common item type in each backpack
-            //split groups after every 3rd line
-            //Find the common letter in each group
-            //add it to list of char
-            //do the priority calculation
+            var inputs = File.ReadAllLines("C:\\dev\\PayCalc\\AoC\\AoC\\Day3\\Day3.txt");
+            var groupedElves = elfSplitter.Elves(inputs);
 
+            foreach(var group in groupedElves)
+            {
+                findCommonChar.FindUppercaseCommonCharacter(group);
+                findCommonChar.FindLowercaseCommonCharacter(group);
+            }
+
+            int lowerCaseNumbers = upperCalculations.GetUppercasePriorityTotal(findCommonChar.charList);
+            int upperCaseNumbers = lowerCalculations.GetLowercasePriorityTotal(findCommonChar.charList);
+            int result = lowerCaseNumbers + upperCaseNumbers;
+            Console.WriteLine(result);
+            Console.ReadLine();
         }
 
 
-    
+
 
     }
 }

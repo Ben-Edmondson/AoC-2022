@@ -6,6 +6,7 @@
         {
             Day3 day = new Day3();
             day.Day3Solution();
+            day.Day3Part2Solution();
         }
     }
 }
