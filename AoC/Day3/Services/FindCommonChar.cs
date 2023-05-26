@@ -19,7 +19,11 @@
                         {
                             if(item == threeItem)
                             {
-                                charList.Add(item);
+                                if (char.IsLower(item))
+                                {
+                                    charList.Add(item);
+                                    break;
+                                }
                             }
                         }
                     }
@@ -44,7 +48,11 @@
                         {
                             if (item == threeItem)
                             {
-                                charList.Add(item);
+                                if (char.IsUpper(item))
+                                {
+                                    charList.Add(item);
+                                    break;
+                                }
                             }
                         }
                     }
