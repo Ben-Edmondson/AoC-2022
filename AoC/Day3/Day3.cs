@@ -24,15 +24,15 @@
         {
             var inputs = File.ReadAllLines("C:\\dev\\PayCalc\\AoC\\AoC\\Day3\\Day3.txt");
             var groupedElves = elfSplitter.Elves(inputs);
-
+            var lowerList = new List<char>();
+            var upperList = new List<char>();
             foreach(var group in groupedElves)
             {
-                findCommonChar.FindUppercaseCommonCharacter(group);
-                findCommonChar.FindLowercaseCommonCharacter(group);
+                upperList.AddRange(findCommonChar.FindUppercaseCommonCharacter(group));
+                lowerList.AddRange(findCommonChar.FindLowercaseCommonCharacter(group));
             }
-
-            int lowerCaseNumbers = upperCalculations.GetUppercasePriorityTotal(findCommonChar.charList);
-            int upperCaseNumbers = lowerCalculations.GetLowercasePriorityTotal(findCommonChar.charList);
+            int lowerCaseNumbers = upperCalculations.GetUppercasePriorityTotal(upperList);
+            int upperCaseNumbers = lowerCalculations.GetLowercasePriorityTotal(lowerList);
             int result = lowerCaseNumbers + upperCaseNumbers;
             Console.WriteLine(result);
             Console.ReadLine();

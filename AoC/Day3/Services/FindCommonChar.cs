@@ -3,9 +3,9 @@
     public class FindCommonChar
     {
 
-        public List<char> charList = new List<char>();
-        public void FindLowercaseCommonCharacter(string[] elves)
+        public List<char> FindLowercaseCommonCharacter(string[] elves)
         {
+            List<char> charList = new List<char>();
             string elfOne = elves[0];
             string elfTwo = elves[1];
             string elfThree = elves[2];
@@ -25,10 +25,12 @@
                     }
                 }
             }
+            return charList;
         }
 
-        public void FindUppercaseCommonCharacter(string[] elves)
+        public List<char> FindUppercaseCommonCharacter(string[] elves)
         {
+            List<char>charList = new List<char>();
             string elfOne = elves[0];
             string elfTwo = elves[1];
             string elfThree = elves[2];
@@ -48,6 +50,7 @@
                     }
                 }
             }
+            return charList;
         }
     }
 }
