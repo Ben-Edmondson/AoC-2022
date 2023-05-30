@@ -11,6 +11,7 @@
             string elfThree = elves[2];
             foreach (char item in elfOne)
             {
+
                 foreach(char twoItem in elfTwo)
                 {
                     if(item == twoItem)
@@ -19,17 +20,15 @@
                         {
                             if(item == threeItem)
                             {
-                                if (char.IsLower(item))
+                                if (char.IsLower(item) && !charList.Contains(item))
                                 {
                                     charList.Add(item);
-                                    goto FoundMatch;
                                 }
                             }
                         }
                     }
                 }
             }
-            FoundMatch:
             return charList;
         }
 
@@ -41,6 +40,10 @@
             string elfThree = elves[2];
             foreach (char item in elfOne)
             {
+                if(charList.Contains(item))
+                {
+                    break;
+                }
                 foreach (char twoItem in elfTwo)
                 {
                     if (item == twoItem)
@@ -49,17 +52,15 @@
                         {
                             if (item == threeItem)
                             {
-                                if (char.IsUpper(item))
+                                if (char.IsUpper(item) && !charList.Contains(item))
                                 {
                                     charList.Add(item);
-                                    goto FoundMatch;
                                 }
                             }
                         }
                     }
                 }
             }
-            FoundMatch:
             return charList;
         }
     }
