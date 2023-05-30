@@ -11,21 +11,11 @@
             string elfThree = elves[2];
             foreach (char item in elfOne)
             {
-
-                foreach(char twoItem in elfTwo)
+                if (elfTwo.Contains(item) && elfThree.Contains(item))
                 {
-                    if(item == twoItem)
+                    if (char.IsLower(item) && !charList.Contains(item))
                     {
-                        foreach(char threeItem in elfThree)
-                        {
-                            if(item == threeItem)
-                            {
-                                if (char.IsLower(item) && !charList.Contains(item))
-                                {
-                                    charList.Add(item);
-                                }
-                            }
-                        }
+                        charList.Add(item);
                     }
                 }
             }
@@ -38,26 +28,14 @@
             string elfOne = elves[0];
             string elfTwo = elves[1];
             string elfThree = elves[2];
-            foreach (char item in elfOne)
+
+            foreach(char item in elfOne)
             {
-                if(charList.Contains(item))
+                if(elfTwo.Contains(item) && elfThree.Contains(item))
                 {
-                    break;
-                }
-                foreach (char twoItem in elfTwo)
-                {
-                    if (item == twoItem)
+                    if(char.IsUpper(item)&& !charList.Contains(item))
                     {
-                        foreach (char threeItem in elfThree)
-                        {
-                            if (item == threeItem)
-                            {
-                                if (char.IsUpper(item) && !charList.Contains(item))
-                                {
-                                    charList.Add(item);
-                                }
-                            }
-                        }
+                        charList.Add(item);
                     }
                 }
             }
