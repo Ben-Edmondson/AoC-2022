@@ -22,13 +22,14 @@
                                 if (char.IsLower(item))
                                 {
                                     charList.Add(item);
-                                    break;
+                                    goto FoundMatch;
                                 }
                             }
                         }
                     }
                 }
             }
+            FoundMatch:
             return charList;
         }
 
@@ -51,13 +52,14 @@
                                 if (char.IsUpper(item))
                                 {
                                     charList.Add(item);
-                                    break;
+                                    goto FoundMatch;
                                 }
                             }
                         }
                     }
                 }
             }
+            FoundMatch:
             return charList;
         }
     }
