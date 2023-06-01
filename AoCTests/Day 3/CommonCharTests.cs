@@ -16,8 +16,8 @@ namespace AoCTests.Day_3
                 "lGioP"
             };
 
-            commonChar.FindUppercaseCommonCharacter(elves);
-            Assert.That(commonChar.charList.Contains('G'));
+            List<char> elvesList = commonChar.FindUppercaseCommonCharacter(elves);
+            Assert.That(elvesList.Contains('G'));
 
         }
 
