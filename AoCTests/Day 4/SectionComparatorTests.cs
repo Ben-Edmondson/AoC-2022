@@ -20,9 +20,9 @@ namespace AoCTests.Day_4
             Sections sections = new Sections();
             sections.sectionOne = sectionOne;
             sections.sectionTwo = sectionTwo;
-            int result = sectionComparator.CompareSections(sections);
+            bool result = sectionComparator.CompareSections(sections);
 
-            Assert.That(result, Is.EqualTo(1));
+            Assert.That(result, Is.EqualTo(true));
         }
 
         [Test]
@@ -33,9 +33,9 @@ namespace AoCTests.Day_4
             Sections sections = new Sections();
             sections.sectionOne = sectionOne;
             sections.sectionTwo = sectionTwo;
-            int result = sectionComparator.CompareSections(sections);
+            bool result = sectionComparator.CompareSections(sections);
 
-            Assert.That(result, Is.EqualTo(0));
+            Assert.That(result, Is.EqualTo(false));
         }
 
         [Test]
@@ -46,9 +46,9 @@ namespace AoCTests.Day_4
             Sections sections = new Sections();
             sections.sectionOne = sectionOne;
             sections.sectionTwo = sectionTwo;
-            int result = sectionComparator.CompareSections(sections);
+            bool result = sectionComparator.CompareSections(sections);
 
-            Assert.That(result, Is.EqualTo(1));
+            Assert.That(result, Is.EqualTo(true));
         }
     }
 }

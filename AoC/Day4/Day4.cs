@@ -27,7 +27,11 @@ namespace AoC
             foreach(var line in inputs)
             {
                 var sections = sectionSplitter.splitSection(line);
-                counter = counter + comparator.CompareSections(sections);
+                
+                if(comparator.CompareSections(sections) == true)
+                {
+                    counter++;
+                }
             }
             Console.WriteLine(counter);
             Console.ReadLine();
