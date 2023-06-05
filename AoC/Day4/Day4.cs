@@ -1,13 +1,17 @@
-﻿using System;
+﻿using AoC.Models;
+using AoC.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AoC.Day4
+namespace AoC
 {
     public class Day4
     {
+        SectionSplitter sectionSplitter = new SectionSplitter();
+        SectionComparator comparator = new SectionComparator();
         //ID number for each section
         //some sections overlap
         //some sections are completely contained by another
@@ -16,5 +20,17 @@ namespace AoC.Day4
         //split the input into groups of 2
         //compare the sections for overlap
         //add to total pairs if there is complete overlap
+        public void Day4Part1()
+        {
+            int counter = 0;
+            var inputs = File.ReadAllLines("C:\\dev\\PayCalc\\AoC\\AoC\\Day4\\Day4.txt");
+            foreach(var line in inputs)
+            {
+                var sections = sectionSplitter.splitSection(line);
+                counter = counter + comparator.CompareSections(sections);
+            }
+            Console.WriteLine(counter);
+            Console.ReadLine();
+        }
     }
 }
