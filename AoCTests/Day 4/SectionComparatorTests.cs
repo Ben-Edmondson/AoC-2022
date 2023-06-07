@@ -13,7 +13,7 @@ namespace AoCTests.Day_4
     {
         SectionComparator sectionComparator = new SectionComparator();
         [Test]
-        public void SectionOverlapsTest()
+        public void SectionContainedTest()
         {
             int[]sectionOne = new int[] { 2, 8 };
             int[]sectionTwo = new int[] { 3, 7 };
@@ -26,7 +26,7 @@ namespace AoCTests.Day_4
         }
 
         [Test]
-        public void SectionDoesNotOverlapTest()
+        public void SectionNotContainedTest()
         {
             int[] sectionOne = new int[] { 32, 80 };
             int[] sectionTwo = new int[] { 17, 79 };
@@ -39,7 +39,7 @@ namespace AoCTests.Day_4
         }
 
         [Test]
-        public void SectionOverlapsTwoTest()
+        public void SectionContainedTwoTest()
         {
             int[] sectionOne = new int[] { 6, 6 };
             int[] sectionTwo = new int[] { 4, 6 };
@@ -47,6 +47,32 @@ namespace AoCTests.Day_4
             sections.sectionOne = sectionOne;
             sections.sectionTwo = sectionTwo;
             bool result = sectionComparator.CompareSections(sections);
+
+            Assert.That(result, Is.EqualTo(true));
+        }
+
+        [Test]
+        public void SectionDoesNotOverlapTest()
+        {
+            int[] sectionOne = new int[] { 6, 6 };
+            int[] sectionTwo = new int[] { 4, 5 };
+            Sections sections = new Sections();
+            sections.sectionOne = sectionOne;
+            sections.sectionTwo = sectionTwo;
+            bool result = sectionComparator.CompareOverlap(sections);
+
+            Assert.That(result, Is.EqualTo(false));
+        }
+
+        [Test]
+        public void SectionOverlapTest()
+        {
+            int[] sectionOne = new int[] { 6, 6 };
+            int[] sectionTwo = new int[] { 4, 7 };
+            Sections sections = new Sections();
+            sections.sectionOne = sectionOne;
+            sections.sectionTwo = sectionTwo;
+            bool result = sectionComparator.CompareOverlap(sections);
 
             Assert.That(result, Is.EqualTo(true));
         }

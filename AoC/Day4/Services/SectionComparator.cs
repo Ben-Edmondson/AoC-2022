@@ -30,5 +30,26 @@ namespace AoC.Services
             }
             return false;
         }
+
+        public bool CompareOverlap(Sections sections)
+        {
+            int sectionOneStart = sections.sectionOne[0];
+            int sectionOneEnd = sections.sectionOne[1];
+
+            int sectionTwoStart = sections.sectionTwo[0];
+            int sectionTwoEnd = sections.sectionTwo[1];
+
+            if (sectionOneEnd >= sectionTwoStart && sectionTwoEnd >= sectionOneStart)
+            {
+                return true;
+
+            }
+            else if (sectionTwoEnd >= sectionOneStart && sectionOneEnd >= sectionTwoStart)
+            {
+                return true;
+            }
+            return false;
+
+        }
     }
 }

@@ -34,6 +34,22 @@ namespace AoC
                 }
             }
             Console.WriteLine(counter);
+        }
+
+        public void Day4Part2()
+        {
+            int counter = 0;
+            var inputs = File.ReadAllLines("C:\\dev\\PayCalc\\AoC\\AoC\\Day4\\Day4.txt");
+            foreach (var line in inputs)
+            {
+                var sections = sectionSplitter.splitSection(line);
+
+                if (comparator.CompareOverlap(sections) == true)
+                {
+                    counter++;
+                }
+            }
+            Console.WriteLine(counter);
             Console.ReadLine();
         }
     }
