@@ -1,9 +1,8 @@
 ﻿using AoC.Day5.Models;
-using System.Runtime.CompilerServices;
 
 namespace AoC.Day5.Services
 {
-    public class TempName
+    public class CratePartitioner
     {
         public CrateSections SplitStuff(string input)
         {
@@ -11,18 +10,18 @@ namespace AoC.Day5.Services
             string[] splitter = input.Split(' ');
             foreach(var findOutIdk in splitter)
             {
-                bool isInt = int.TryParse(findOutIdk, out int heheXD);
+                bool isInt = int.TryParse(findOutIdk, out int namingIsHard);
                 if (isInt)
                 {
                     if(returnValue.AmountToMove == 0)
                     {
-                        returnValue.AmountToMove = heheXD;
+                        returnValue.AmountToMove = namingIsHard;
                     }else if(returnValue.WhereToMoveFrom == 0)
                     {
-                        returnValue.WhereToMoveFrom = heheXD;
+                        returnValue.WhereToMoveFrom = namingIsHard;
                     }else if(returnValue.WhereToMoveTo == 0)
                     {
-                        returnValue.WhereToMoveTo = heheXD;
+                        returnValue.WhereToMoveTo = namingIsHard;
                     }
 
                 }
